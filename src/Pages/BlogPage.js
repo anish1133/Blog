@@ -8,7 +8,7 @@ import BlogDetails from "../components/BlogDetails";
 const  BlogPage=() => {
     const newBaseUrl=" https://codehelp-apis.vercel.app/api/"
     const [blog, setBlog] = useState(null);
-    const [relatedBlogs, setRelatedBlogs]=useState([]);
+    const [relatedBlog, setRelatedBlog]=useState([]);
     const location = useLocation();
     const navigation = useNavigate();
     const {setLoading,loading} = useContext(AppContext);
@@ -23,12 +23,12 @@ const  BlogPage=() => {
             const res = await fetch(url);
             const data = await res.json(); 
             setBlog(data.blog);
-            setRelatedBlogs(data.relatedBlogs);
+            setRelatedBlog(data.relatedBlogs);
         }       
         catch(error){
             console.log("Error aaya in  blog id wali call");
             setBlog(null);
-            setRelatedBlogs([]); 
+            setRelatedBlog([]); 
         }
         setLoading(false);
     }
@@ -56,14 +56,15 @@ const  BlogPage=() => {
                 blog ? 
                 (
                     <div>
+                    {/* this place */}
                         <BlogDetails post={blog} />
                         <h2>Related Blogs</h2>
                         {
-                            relatedBlogs.map ( (post) =>{
+                            relatedBlog.map ( (post) =>(
                                 <div key ={post.id}>
                                     <BlogDetails post={post} />
                                 </div>
-                            })
+                            ))
                         }
                     </div>
                 ) : 
