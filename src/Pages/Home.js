@@ -6,11 +6,11 @@ import Pagination from "../components/Pagination";
 const  Home=() => {
 
     return (
-        <div>
+        <div className="w-full h-full flex flex-col justify-center items-center  ">
             <Header />
             <div>
-                <Blogs/>
-                <Pagination/>
+                <Blogs />
+                <Pagination />
             </div>
         </div>
 

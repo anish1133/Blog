@@ -42,7 +42,7 @@ const page = searchParams.get("page") ?? 1;
         <Pagination />
     </div>
     */
-    <Routes>
+    <Routes >
         <Route path="/" element={<Home/>} />
         <Route path="/blog/:blogId" element={<BlogPage/>} />
         <Route path="/tags/:tag" element={<TagPage/>} />

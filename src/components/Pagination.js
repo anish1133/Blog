@@ -5,8 +5,8 @@ const Pagination = () => {
 
     const {page, handlePageChange,totalPages} = useContext(AppContext);
     return(
-        <div className="fixed bottom-0 bg-white  w-full border-4  flex justify-center items-center ">
-            <div className=" flex justify-between w-11/12 max-w-[680px] py-3">
+        <div className="fixed bottom-0 bg-white  w-[100vw] border-4 flex justify-center items-center left-0 ">
+            <div className=" flex justify-between w-[100vw] max-w-[680px] py-3 ">
                 <div className="flex gap-x-1">
                 { page > 1 && (
                     <button 

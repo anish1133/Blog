@@ -5,13 +5,13 @@ const BlogDetails = ({post}) =>{
 
 
     return(
-        <div className="mt-[5px]">
+        <div className="flex  flex-col w-full left-[50px]">
             <NavLink to={`/blog/${post.id}`}>
-                <span>{post.title}</span>
+                <span >{post.title}</span>
             </NavLink> 
-            <p>
+            <p >
                 By
-                <span>{post.author}</span>
+                <span >{post.author}</span>
                 on {" "}
                 <NavLink to={`/categories/${post.category.replaceAll(" ","-" )}`}> 
                     <span>{post.category}</span>
