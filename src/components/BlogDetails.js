@@ -5,7 +5,7 @@ const BlogDetails = ({post}) =>{
 
 
     return(
-        <div className="flex  flex-col w-full left-[50px]">
+        <div className="flex  flex-col w-full">
             <NavLink to={`/blog/${post.id}`}>
                 <span className="text-lg font-bold" >{post.title}</span>
             </NavLink> 
@@ -19,7 +19,7 @@ const BlogDetails = ({post}) =>{
             </p>
             <p className="gap-x-2">Posted on {post.date}</p>
             <p> {post.content} </p>
-            <div>
+            <div className=" text-blue-600 space-x-4">
                 {post.tags.map ( (tag,index) => (
                     <NavLink key={index} to={`/tags/${tag.replaceAll(" ","-")}`}>
                         <span>{`#${tag}`}</span>
