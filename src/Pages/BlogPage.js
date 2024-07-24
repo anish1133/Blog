@@ -4,6 +4,7 @@ import { AppContext } from "../context/AppContext";
 import { baseUrl } from "../baseUrl";
 import Header from "../components/Header";
 import BlogDetails from "../components/BlogDetails";
+import Pagination from "../components/Pagination";
 
 const  BlogPage=() => {
     const newBaseUrl=" https://codehelp-apis.vercel.app/api/"
@@ -39,10 +40,10 @@ const  BlogPage=() => {
     },[location.pathname] );
 
     return (
-        <div >
+        <div className=" w-full flex flex-col justify-center items-center ">
             <Header />
-            <div className=" w-full max-w-[680px] justify-center items-center">
-                <button 
+            <div className=" w-full max-w-[680px] mt-24 ">
+                <button  className="rounded-md border-4 px-3.5 py-1  mb-4"
                     onClick={()=> navigation(-1)}
                 >
                     back 
@@ -55,10 +56,10 @@ const  BlogPage=() => {
                 </div>) :
                 blog ? 
                 (
-                    <div className=" w-full max-w-[680px] h-full flex flex-col justify-center items-center">
+                    <div className=" w-full max-w-[680px] h-full flex flex-col gap-y-2">
                     {/* this place */}
                         <BlogDetails post={blog} />
-                        <h2>Related Blogs</h2>
+                        <h2  className="rounded-md border-2 px-3.5 py-1  m-4 font-semibold w-36" >Related Blogs</h2>
                         {
                             relatedBlog.map ( (post) =>(
                                 <div key ={post.id}>
@@ -67,12 +68,14 @@ const  BlogPage=() => {
                             ))
                         }
                     </div>
+                    
                 ) : 
                 (<div>
                     <p>No Blog Found</p>
                 </div>) 
                
             }
+            
         </div>
 
     );
