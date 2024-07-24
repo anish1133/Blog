@@ -39,9 +39,9 @@ const  BlogPage=() => {
     },[location.pathname] );
 
     return (
-        <div>
+        <div >
             <Header />
-            <div>
+            <div className=" w-full max-w-[680px] justify-center items-center">
                 <button 
                     onClick={()=> navigation(-1)}
                 >
@@ -55,7 +55,7 @@ const  BlogPage=() => {
                 </div>) :
                 blog ? 
                 (
-                    <div>
+                    <div className=" w-full max-w-[680px] h-full flex flex-col justify-center items-center">
                     {/* this place */}
                         <BlogDetails post={blog} />
                         <h2>Related Blogs</h2>
